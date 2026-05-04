@@ -66,7 +66,16 @@ class UserSessionData(BaseModel):
 
 
 # ──────────────────────────────────────────────
-# 5. Prediction Endpoint
+# 5. Health Check
+# ──────────────────────────────────────────────
+
+@app.get("/")
+def root():
+    return {"status": "Online", "message": "Purchase Intent API is running"}
+
+
+# ──────────────────────────────────────────────
+# 6. Prediction Endpoint
 # ──────────────────────────────────────────────
 
 @app.post("/predict")
